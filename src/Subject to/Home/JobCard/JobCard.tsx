@@ -20,6 +20,8 @@ interface Job {
   address: string;
   jobType: string | string[];
   salary: number | string;
+  salaryMin?: number;
+  salaryMax?: number;
   createdAt: string;
   category?: { name: string };
   description?: string;
@@ -65,9 +67,18 @@ const CompanyJobCard: React.FC<{ job: Job; variants: Variants }> = ({
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  
-  // Determine if it's a service (tradesman) job based on classification or provider type
-  const isServiceJob = (job as any).classification === "خدمات" || !!job.user;
+
+  const getJobTypeLabel = (jt: string | string[] | undefined) => {
+    if (!jt) return "تقدم الآن";
+    const typeStr = Array.isArray(jt) ? jt[0] : jt;
+    if (!typeStr) return "تقدم الآن";
+    const lower = String(typeStr).toLowerCase();
+    if (lower === "1" || lower === "full-time") return "Full-time";
+    if (lower === "0" || lower === "part-time") return "Part-time";
+    if (lower === "2" || lower === "one-time" || lower === "quick service") return "One-time";
+    return typeStr;
+  };
+
 
   const handleCardClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -126,7 +137,7 @@ const CompanyJobCard: React.FC<{ job: Job; variants: Variants }> = ({
                  : `${job.salaryMin} - ${job.salaryMax} ${t("جنيه مصري")}`}
            </span>
            <span className={styles.applyBtn}>
-             {t(typeof job.jobType === 'string' ? job.jobType : (job.jobType?.[0] || "تقدم الآن"))}
+             {t(getJobTypeLabel(job.jobType))}
            </span>
         </div>
       </div>
@@ -141,7 +152,6 @@ export default function JobsDashboard() {
   const { t } = useTranslation();
   const { user } = useJobitoAuth();
   const classification = user?.classification;
-  const isTradesman = classification === "tradesman";
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
