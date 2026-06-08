@@ -126,7 +126,7 @@ const CompanyJobCard: React.FC<{ job: Job; variants: Variants }> = ({
                  : `${job.salaryMin} - ${job.salaryMax} ${t("جنيه مصري")}`}
            </span>
            <span className={styles.applyBtn}>
-             {t("Apply")}
+             {t(typeof job.jobType === 'string' ? job.jobType : (job.jobType?.[0] || "تقدم الآن"))}
            </span>
         </div>
       </div>

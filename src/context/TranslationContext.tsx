@@ -1,4 +1,4 @@
-﻿import React, {
+import React, {
   createContext,
   useContext,
   useState,
@@ -613,6 +613,7 @@ export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ c
         if (englishOverrides[normalizedKey]) return englishOverrides[normalizedKey];
       } else if (language === 'ar') {
         const arabicOverrides: Record<string, string> = {
+          'Apply': 'تقدم الآن',
           'Search': 'بحث',
           'Anywhere': 'أي مكان',
           'USER_REGISTERED': 'تسجيل مستخدم جديد',
