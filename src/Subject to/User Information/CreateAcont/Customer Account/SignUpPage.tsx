@@ -467,6 +467,7 @@ export const SignUpPage: React.FC = () => {
                       setFormData({ ...formData, phone: e.target.value })
                     }
                     dir="ltr"
+                    autoComplete="tel"
                     required
                   />
                 </div>

@@ -66,7 +66,7 @@ export const GeneralRatingSection: React.FC<GeneralRatingSectionProps> = ({
     return raterId && currentUserId && raterId === currentUserId;
   });
   const avgRating = reviews.length > 0 
-    ? (reviews.reduce((sum, r) => sum + r.ratingValue, 0) / reviews.length).toFixed(1)
+    ? (reviews.reduce((sum, r) => sum + Number(r.ratingValue || 0), 0) / reviews.length).toFixed(1)
     : null;
 
   const handleSubmit = async () => {
@@ -249,8 +249,8 @@ export const GeneralRatingSection: React.FC<GeneralRatingSectionProps> = ({
                           <Star 
                             key={i} 
                             size={14} 
-                            fill={i < rev.ratingValue ? "#FFB020" : "none"} 
-                            color={i < rev.ratingValue ? "#FFB020" : "#cbd5e1"} 
+                            fill={i < Number(rev.ratingValue || 0) ? "#FFB020" : "none"} 
+                            color={i < Number(rev.ratingValue || 0) ? "#FFB020" : "#cbd5e1"} 
                           />
                         ))}
                       </div>
