@@ -10,4 +10,12 @@ export default defineConfig({
       registry: path.resolve(__dirname, './src/registry'),
     },
   },
+  server: {
+    // Fix: SPA fallback — prevents 404 on direct URL access (e.g. /user-information)
+    historyApiFallback: true,
+    headers: {
+      // Fix: Allow Google Sign-In postMessage to work without COOP warnings
+      'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
+    },
+  },
 })

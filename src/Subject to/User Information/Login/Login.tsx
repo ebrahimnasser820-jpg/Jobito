@@ -9,7 +9,7 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Style from "./Login.module.css";
-import { GoogleOAuthProvider } from "@react-oauth/google";
+
 import type { CredentialResponse } from "@react-oauth/google";
 import MyLoginPage from "../MyLoginPage/MyLoginPage";
 import { useJobitoAuth } from "../../../context/LinkContxt.js";
@@ -276,11 +276,9 @@ export const LoginPage: React.FC<LoginPageProps> = ({ setShowLogin }) => {
               </div>
 
               <div className={Style.googleWrapper}>
-                <GoogleOAuthProvider clientId={googleClientId}>
                   <MyLoginPage
                     onGoogleLogin={handleGoogleLogin}
                   />
-                </GoogleOAuthProvider>
               </div>
 
             </motion.form>
@@ -318,12 +316,10 @@ export const LoginPage: React.FC<LoginPageProps> = ({ setShowLogin }) => {
                 <>
                   <p className={Style.subtitle}>{t("يرجى تسجيل الدخول بحساب Google المرتبط لتغيير كلمة المرور")}</p>
                   <div className={Style.googleWrapper}>
-                    <GoogleOAuthProvider clientId={googleClientId}>
                       <MyLoginPage
                         onSuccess={handleGoogleLogin}
                         onError={() => showToast(t("فشل التحقق من Google"), "error")}
                       />
-                    </GoogleOAuthProvider>
                   </div>
                 </>
               ) : resetStep === 1 && resetMethod === "email" ? (
