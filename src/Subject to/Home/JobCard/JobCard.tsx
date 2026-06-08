@@ -68,6 +68,17 @@ const CompanyJobCard: React.FC<{ job: Job; variants: Variants }> = ({
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+  const getJobTypeLabel = (jt: string | string[] | undefined) => {
+    if (!jt) return "تقدم الآن";
+    const typeStr = Array.isArray(jt) ? jt[0] : jt;
+    if (!typeStr) return "تقدم الآن";
+    const lower = String(typeStr).toLowerCase();
+    if (lower === "1" || lower === "full-time") return "Full-time";
+    if (lower === "0" || lower === "part-time") return "Part-time";
+    if (lower === "2" || lower === "one-time" || lower === "quick service") return "One-time";
+    return typeStr;
+  };
+
 
   const handleCardClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -126,7 +137,7 @@ const CompanyJobCard: React.FC<{ job: Job; variants: Variants }> = ({
                  : `${job.salaryMin} - ${job.salaryMax} ${t("جنيه مصري")}`}
            </span>
            <span className={styles.applyBtn}>
-             {t("Apply")}
+             {t(getJobTypeLabel(job.jobType))}
            </span>
         </div>
       </div>
