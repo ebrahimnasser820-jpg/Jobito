@@ -1,0 +1,445 @@
+.jobsContainer {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 24px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.sectionHeader h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.sectionHeader span {
+  color: var(--color-text);
+}
+
+.showAllLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s;
+}
+
+.showAllLink:hover {
+  gap: 8px;
+}
+
+/* ── FEATURED GRID (vertical cards) ── */
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .featuredGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .featuredGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── LIST GRID (horizontal rows) ── */
+.listGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ════════════════════════════════════════════════
+   COMPANY CARD — Horizontal row style
+   ════════════════════════════════════════════════ */
+.jobsContainer {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.sectionHeader h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.sectionHeader span {
+  font-weight: 800;
+}
+
+.showAllLink {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+
+/* ── GRID layout ── */
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .featuredGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .featuredGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ════════════════════════════════════════════════
+   FEATURED CARD (Match Image)
+   ════════════════════════════════════════════════ */
+.companyCard,
+.tradesmanCard {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.companyCard:hover,
+.tradesmanCard:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+}
+
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.companyLogo,
+.tradesmanAvatar {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companyLogo img,
+.tradesmanAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.jobTypeBadge {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.cardBody {
+  margin-bottom: 20px;
+}
+
+.jobTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.companyMeta {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+
+.cardTags {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.marketing {
+  background: #fff7ed;
+  color: #fb923c;
+}
+
+.design {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.business, .technology {
+  background: #f0fdf4;
+  color: #22c55e;
+}
+
+.defaultPill {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.tradesmanRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f59e0b;
+}
+
+.ratingStar {
+  font-size: 16px;
+}
+
+.ratingValue {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+
+/* ── OLD CARD STYLES (kept for fallback) ── */
+.jobCard {
+  padding: 24px;
+  background: var(--color-card-bg, #ffffff);
+  border: 1px solid var(--color-border-light, #e0e6f7);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.jobCard:hover {
+  border-color: var(--color-text);
+  box-shadow: 0 10px 30px rgba(60, 101, 245, 0.08);
+  transform: translateY(-4px);
+}
+
+.jobTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f8faff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text);
+  border: 1px solid #eef2ff;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #eef2ff;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.jobCard h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+  transition: color 0.2s;
+}
+
+.jobCard:hover h3 {
+  color: var(--color-text);
+}
+
+.jobCard p {
+  font-size: 13px;
+  color: var(--color-text);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+/* Category Specific Tags */
+.marketing {
+  background: #fff7ed;
+  color: var(--color-text);
+}
+
+.design {
+  background: #ecfeff;
+  color: var(--color-text);
+}
+
+.business {
+  background: #f0fdf4;
+  color: var(--color-text);
+}
+
+.technology {
+  background: #fef2f2;
+  color: var(--color-text);
+}
+
+/* Latest Section */
+.latestSection {
+  background: var(--color-bg-secondary);
+  padding: clamp(24px, 5vw, 60px);
+  border-radius: 24px;
+  margin-top: 80px;
+}
+
+
+.latestGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .latestGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.latestCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-card-bg);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-light);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.latestCard:hover {
+  border-color: var(--color-primary);
+  transform: translateX(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+
+.latestCard h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.latestCard p {
+  font-size: 13px;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.loader, .error {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.error {
+  color: var(--color-text);
+}
+
+/* ── RESPONSIVE: Stack cards on mobile ── */
+@media (max-width: 640px) {
+  .companyCard,
+  .tradesmanCard {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .companyTags {
+    order: 3;
+    width: 100%;
+  }
+
+  .companyApplyBtn,
+  .tradesmanApplyBtn {
+    order: 4;
+  }
+
+  .companyCapacity {
+    order: 3;
+  }
+}

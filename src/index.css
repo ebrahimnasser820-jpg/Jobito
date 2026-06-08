@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap");
+
+/* ─── Theme Variables ─────────────────────────── */
+:root {
+  --color-primary-rgb: 74, 110, 209;
+  --color-bg-rgb: 250, 251, 246;
+  --color-card-bg-rgb: 255, 255, 255;
+
+  /* ─── Light Theme (Default) ─── */
+  --color-primary: #4a6ed1; /* Cobalt Bloom */
+  --color-primary-hover: #3b5bb8;
+  --color-primary-light: #e8edf8;
+  --color-primary-bg: #d6dfef;
+  --color-accent-rgb: 255, 122, 42;
+  --color-accent: #ff7a2a; /* Tangerine Petal */
+  --color-accent-hover: #e56a1f;
+  --color-accent-light: #fff0e6;
+  --color-muted: #b59a90; /* Dusty Taupe */
+  --color-text: #26292d;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #7c8493;
+  --color-bg: #fafbf6;
+  --color-bg-secondary: #f7f8fc;
+  --color-bg-tertiary: #f8f9fb;
+  --color-header-bg: #fff;
+  --color-footer-bg: #0b1020;
+  --color-footer-text: #c9d1d9;
+  --color-border: #d6ddeb;
+  --color-border-light: #e9ebf0;
+  --color-card-bg: #ffffff;
+  --color-card-hover: #f4f5f7;
+  --color-input-bg: #ffffff;
+  --color-input-focus-shadow: rgba(74, 110, 209, 0.15);
+  --gradient-primary: linear-gradient(135deg, #4a6ed1, #ff7a2a);
+  --navy: #0b1020;
+  --shadow-sm: 0 1px 12px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --color-primary-rgb: 107, 140, 224;
+  --color-bg-rgb: 11, 16, 32;
+  --color-card-bg-rgb: 20, 27, 45;
+
+  /* ─── Dark Theme ─── */
+  --color-primary: #6b8ce0; /* Cobalt lighter */
+  --color-primary-hover: #8aa3e8;
+  --color-primary-light: #1a2340;
+  --color-primary-bg: #162035;
+  --color-accent-rgb: 255, 154, 85;
+  --color-accent: #ff9a55; /* Tangerine softer */
+  --color-accent-hover: #ffb07a;
+  --color-accent-light: #2a1a10;
+  --color-muted: #c4ada5;
+  --color-text: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-bg: #0b1020; /* Midnight Navy */
+  --color-bg-secondary: #111827;
+  --color-bg-tertiary: #0f1629;
+  --color-header-bg: #141b2d;
+  --color-footer-bg: #080c18;
+  --color-footer-text: #94a3b8;
+  --color-border: #1e2a45;
+  --color-border-light: #1a2338;
+  --color-card-bg: #141b2d;
+  --color-card-hover: #1a2540;
+  --color-input-bg: #090e1a; /* Darker input background */
+  --color-input-focus-shadow: rgba(107, 140, 224, 0.2);
+  --gradient-primary: linear-gradient(135deg, #6b8ce0, #ff9a55);
+  --navy: #8aa3e8;
+  --shadow-sm: 0 1px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.3s ease,
+    color 0.2s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Layout */
+.main-layout {
+  flex: 1;
+  min-height: 100vh; /* يخليه ياخد طول الشاشة على الأقل ويطول مع المحتوى */   
+  display: flex;
+  flex-direction: column;
+}
+
+/* Links */
+a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Form elements */
+button,
+input {
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+  font-family: inherit;
+  border: 1px solid var(--color-border);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="number"] {
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: var(--color-input-bg) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* Autofill fixes for Dark Mode */
+[data-theme="dark"] input:-webkit-autofill,
+[data-theme="dark"] input:-webkit-autofill:hover,
+[data-theme="dark"] input:-webkit-autofill:focus,
+[data-theme="dark"] input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--color-input-bg) inset !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+}
+
+/* For inputs that should be transparent (like search bars) */
+input.transparent,
+.transparent input,
+.transparent select {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  background-image: none !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+/* ─── Responsive Adjustments ─────────────────────────── */
+@media (max-width: 1024px) {
+  .page-content {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .main-layout {
+    min-height: calc(100vh - 60px); /* Adjust for header if fixed */
+  }
+
+  .page-content {
+    padding: 0 15px;
+  }
+
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+  h3 { font-size: 1.5rem !important; }
+}
+
+@media (max-width: 480px) {
+  .page-content {
+    padding: 0 10px;
+  }
+
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.75rem !important; }
+  
+  .flex-mobile-column {
+    flex-direction: column !important;
+  }
+}
+
+.page-content.full-screen-page {
+  padding: 0 !important;
+  margin: 0 !important;
+}

@@ -1,0 +1,75 @@
+.perksContainer {
+  max-width: 1200px;
+  margin: 64px auto;
+  padding: 0 24px;
+}
+
+.titleArea {
+  margin-bottom: 48px;
+}
+
+.titleArea h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #05264e;
+  margin-bottom: 12px;
+}
+
+.titleArea p {
+  font-size: 16px;
+  color: #6b7280;
+  max-width: 600px;
+}
+
+.perksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.perkCard {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid #e8eaf0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.perkCard:hover {
+  transform: translateY(-8px);
+  border-color: #3c65f5;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.perkIcon {
+  width: 56px;
+  height: 56px;
+  background-color: #f8faff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3c65f5;
+  margin-bottom: 24px;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+
+.perkCard:hover .perkIcon {
+  background-color: #3c65f5;
+  color: #ffffff;
+}
+
+.perkTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #05264e;
+  margin-bottom: 12px;
+}
+
+.perkDescription {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+}

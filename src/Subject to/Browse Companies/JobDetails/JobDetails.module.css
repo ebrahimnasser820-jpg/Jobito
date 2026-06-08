@@ -1,0 +1,114 @@
+.jobContainer {
+  width: 100%;
+  color: #1a1d2e;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.section {
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #05264e;
+  margin-bottom: 20px;
+}
+
+/* Progress Area */
+.progressBox {
+  margin-bottom: 24px;
+}
+
+.progressBox p {
+  font-size: 14px;
+  color: #515b6f;
+  margin-bottom: 12px;
+}
+
+.progressBox strong {
+  color: #05264e;
+  font-weight: 800;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: #f4f6fb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  width: 50%;
+  height: 100%;
+  background-color: #22c55e;
+  border-radius: 4px;
+}
+
+/* Info Rows */
+.jobInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.infoLabel {
+  color: #8892a4;
+  font-weight: 500;
+}
+
+.infoValue {
+  font-weight: 700;
+  color: #1a1d2e;
+}
+
+/* Tags & Skills */
+.tags,
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.tagMarketing {
+  background-color: #fff7ed;
+  color: #f97316;
+}
+
+.tagDesign {
+  background-color: #f0fdf4;
+  color: #22c55e;
+}
+
+.skillItem {
+  background-color: #f8faff;
+  color: #3b5bdb;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #eef2ff;
+}

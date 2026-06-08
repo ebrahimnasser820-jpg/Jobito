@@ -1,0 +1,1150 @@
+/* ============================================
+   Statistics Component – Dark Theme
+   ============================================ */
+
+/* Page Wrapper */
+.wrapper {
+    font-family: 'DM Sans', 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.mainLayout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+    width: 100%;
+}
+
+/* MAIN STATISTICS CARD (LEFT) */
+.statisticsCard {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin: 4px 0 0 0;
+}
+
+/* Period Switcher */
+.periodSwitcher {
+    display: flex;
+    background: var(--color-bg);
+    border-radius: 6px;
+    padding: 4px;
+    border: 1px solid var(--color-border);
+}
+
+.periodBtn {
+    padding: 8px 18px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6B7280;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.periodBtnActive {
+    background: #578BC7;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(87, 139, 199, 0.3);
+}
+
+/* Tabs */
+.tabList {
+    display: flex;
+    gap: 32px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 30px;
+}
+
+.tabItem {
+    padding: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.tabItemActive {
+    color: var(--color-text);
+}
+
+.tabItemActive::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #578BC7;
+    border-radius: 3px;
+}
+
+/* Card Content: Chart + Side Stats */
+.cardContent {
+    display: flex;
+    gap: 24px;
+}
+
+.chartContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chartArea {
+    flex: 1;
+    height: 260px;
+}
+
+.legend {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legendDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.dotOrange {
+    background-color: #FFA524;
+}
+
+.dotBlue {
+    background-color: #5484C4;
+}
+
+.legendLabel {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+/* Mini Stats Column */
+.miniStatsColumn {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+
+.miniStatCard {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.miniStatHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.miniStatLabel {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin: 0 0 8px 0;
+}
+
+.miniStatValue {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 8px 0;
+}
+
+.miniStatTrend {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.trendLabel {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.trendUp {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4AD991;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.trendDown {
+    font-size: 13px;
+    font-weight: 700;
+    color: #FF5959;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.miniStatIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconBgOrange {
+    background-color: rgba(255, 165, 36, 0.15);
+}
+
+.iconBgBlue {
+    background-color: rgba(84, 132, 196, 0.15);
+}
+
+/* RIGHT COLUMN (SIDE CARDS) */
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sideCard {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.sideCardLabel {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin: 0 0 16px 0;
+}
+
+.sideCardValueRow {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.sideCardValue {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+}
+
+.sideCardUnit {
+    font-size: 18px;
+    color: var(--color-text-muted);
+}
+
+/* Applicants Summary Progress Bar */
+.applicantsSummaryCard {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.sideCardHeaderTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: var(--color-text);
+}
+
+.sumValueArea {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.sumHugeNumber {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-text);
+}
+
+.sumLabelText {
+    font-size: 20px;
+    color: var(--color-text-muted);
+}
+
+.progressBar {
+    display: flex;
+    height: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    background-color: var(--color-bg);
+}
+
+.progressSegment {
+    height: 100%;
+}
+
+.applicantsLegendGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+}
+
+.applicantLegendItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.applicantLegendBox {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.applicantLegendLabel {
+    font-size: 15px;
+    color: var(--color-text-muted);
+}
+
+.applicantLegendLabel strong {
+    color: var(--color-text);
+    margin-left: 4px;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.tooltipArrow {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--color-surface);
+}
+
+.tooltipRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tooltipDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.tooltipValue {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .mainLayout {
+        grid-template-columns: 1fr;
+    }
+    .cardContent {
+        flex-direction: column;
+    }
+    .miniStatsColumn {
+        width: 100%;
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .statisticsCard {
+        padding: 16px;
+    }
+    
+    .cardHeader {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    
+    .periodSwitcher {
+        width: fit-content;
+    }
+    
+    .tabList {
+        gap: 16px;
+        margin-bottom: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tabItem {
+        font-size: 14px;
+        padding-bottom: 8px;
+    }
+    
+    .cardContent {
+        gap: 16px;
+    }
+    
+    .miniStatsColumn {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .miniStatCard {
+        padding: 12px;
+    }
+    
+    .miniStatValue {
+        font-size: 20px;
+    }
+    
+    .applicantsLegendGrid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .sideCard {
+        padding: 16px;
+    }
+    
+    .sumHugeNumber {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 647px) {
+    .wrapper {
+        padding: 0;
+    }
+
+    .mainLayout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .statisticsCard {
+        padding: 16px;
+        border-radius: 12px;
+        width: 96%;
+    }
+
+    .cardHeader {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .periodSwitcher {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .periodBtn {
+        padding: 6px 10px;
+        font-size: 11px;
+        flex: 1;
+        text-align: center;
+    }
+
+    .tabList {
+        gap: 0;
+        margin-bottom: 16px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+    }
+
+    .tabItem {
+        font-size: 12px;
+        padding: 0 10px 8px;
+        flex-shrink: 0;
+    }
+
+    .cardContent {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .chartContainer {
+        width: 100%;
+    }
+
+    .chartArea {
+        height: 220px;
+    }
+
+    .chartArea > div {
+        height: 220px !important;
+    }
+
+    .legend {
+        gap: 16px;
+        margin-top: 12px;
+        justify-content: center;
+    }
+
+    .legendLabel {
+        font-size: 12px;
+    }
+
+    /* Mini stat cards display side by side using grid (2 columns) */
+    .miniStatsColumn {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .miniStatCard {
+        padding: 12px;
+    }
+
+    .miniStatLabel {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .miniStatValue {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .miniStatTrend {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .trendLabel {
+        font-size: 10px;
+    }
+
+    .trendUp, .trendDown {
+        font-size: 11px;
+    }
+
+    .miniStatIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Right column - stacked vertically to give cards full width and beautiful proportions */
+    .rightColumn {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .sideCard {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .sideCardLabel {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .sideCardValue {
+        font-size: 40px;
+    }
+
+    .sideCardUnit {
+        font-size: 14px;
+    }
+
+    .sideCardHeaderTitle {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .sumValueArea {
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+
+    .sumHugeNumber {
+        font-size: 40px;
+    }
+
+    .sumLabelText {
+        font-size: 16px;
+    }
+
+    .progressBar {
+        height: 10px;
+        margin-bottom: 20px;
+    }
+
+    .applicantsLegendGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .applicantLegendBox {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+    }
+
+    .applicantLegendLabel {
+        font-size: 13px;
+    }
+}
+@media (max-width: 351px) {
+    .wrapper {
+        background-color: #5484C4;
+        padding: 0;
+    }
+
+    .mainLayout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .statisticsCard {
+        padding: 16px;
+        border-radius: 12px;
+        width: 96%;
+    }
+
+    .cardHeader {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .periodSwitcher {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .periodBtn {
+        padding: 6px 10px;
+        font-size: 11px;
+        flex: 1;
+        text-align: center;
+    }
+
+    .tabList {
+        gap: 0;
+        margin-bottom: 16px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+    }
+
+    .tabItem {
+        font-size: 12px;
+        padding: 0 10px 8px;
+        flex-shrink: 0;
+    }
+
+    .cardContent {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .chartContainer {
+        width: 100%;
+    }
+
+    .chartArea {
+        height: 220px;
+    }
+
+    .chartArea > div {
+        height: 220px !important;
+    }
+
+    .legend {
+        gap: 16px;
+        margin-top: 12px;
+        justify-content: center;
+    }
+
+    .legendLabel {
+        font-size: 12px;
+    }
+
+    /* Mini stat cards display side by side using grid (2 columns) */
+    .miniStatsColumn {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .miniStatCard {
+        padding: 12px;
+    }
+
+    .miniStatLabel {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .miniStatValue {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .miniStatTrend {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .trendLabel {
+        font-size: 10px;
+    }
+
+    .trendUp, .trendDown {
+        font-size: 11px;
+    }
+
+    .miniStatIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Right column - stacked vertically to give cards full width and beautiful proportions */
+    .rightColumn {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .sideCard {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .sideCardLabel {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .sideCardValue {
+        font-size: 40px;
+    }
+
+    .sideCardUnit {
+        font-size: 14px;
+    }
+
+    .sideCardHeaderTitle {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .sumValueArea {
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+
+    .sumHugeNumber {
+        font-size: 40px;
+    }
+
+    .sumLabelText {
+        font-size: 16px;
+    }
+
+    .progressBar {
+        height: 10px;
+        margin-bottom: 20px;
+    }
+
+    .applicantsLegendGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .applicantLegendBox {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+    }
+
+    .applicantLegendLabel {
+        font-size: 13px;
+    }
+}
+@media (max-width: 1472px) {
+    .wrapper {
+        padding: 0;
+    }
+
+    .mainLayout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .statisticsCard {
+        padding: 16px;
+        border-radius: 12px;
+        width: 96%;
+    }
+
+    .cardHeader {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .periodSwitcher {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .periodBtn {
+        padding: 6px 10px;
+        font-size: 11px;
+        flex: 1;
+        text-align: center;
+    }
+
+    .tabList {
+        gap: 0;
+        margin-bottom: 16px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+    }
+
+    .tabItem {
+        font-size: 12px;
+        padding: 0 10px 8px;
+        flex-shrink: 0;
+    }
+
+    .cardContent {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .chartContainer {
+        width: 100%;
+    }
+
+    .chartArea {
+        height: 220px;
+    }
+
+    .chartArea > div {
+        height: 220px !important;
+    }
+
+    .legend {
+        gap: 16px;
+        margin-top: 12px;
+        justify-content: center;
+    }
+
+    .legendLabel {
+        font-size: 12px;
+    }
+
+    /* Mini stat cards display side by side using grid (2 columns) */
+    .miniStatsColumn {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .miniStatCard {
+        padding: 12px;
+    }
+
+    .miniStatLabel {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .miniStatValue {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .miniStatTrend {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .trendLabel {
+        font-size: 10px;
+    }
+
+    .trendUp, .trendDown {
+        font-size: 11px;
+    }
+
+    .miniStatIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Right column - stacked vertically to give cards full width and beautiful proportions */
+    .rightColumn {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .sideCard {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .sideCardLabel {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .sideCardValue {
+        font-size: 40px;
+    }
+
+    .sideCardUnit {
+        font-size: 14px;
+    }
+
+    .sideCardHeaderTitle {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .sumValueArea {
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+
+    .sumHugeNumber {
+        font-size: 40px;
+    }
+
+    .sumLabelText {
+        font-size: 16px;
+    }
+
+    .progressBar {
+        height: 10px;
+        margin-bottom: 20px;
+    }
+
+    .applicantsLegendGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .applicantLegendBox {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+    }
+
+    .applicantLegendLabel {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .statisticsCard {
+        padding: 14px;
+        border-radius: 12px;
+    }
+    
+    .title {
+        font-size: 18px;
+    }
+    
+    .periodBtn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 398px) {
+    .statisticsCard {
+        padding: 14px;
+        border-radius: 12px;
+    }
+    
+    .title {
+        font-size: 16px;
+    }
+    
+    .subtitle {
+        font-size: 11px;
+        display: block;
+    }
+    
+    .periodSwitcher {
+        margin-top: 8px;
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .periodBtn {
+        padding: 6px 8px;
+        font-size: 10px;
+        flex: 1;
+        text-align: center;
+    }
+    
+    .tabList {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 16px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .tabItem {
+        font-size: 12px;
+        padding-bottom: 6px;
+    }
+    
+    .chartContainer {
+        display: flex;
+        margin-bottom: 16px;
+    }
+    
+    .chartArea {
+        height: 200px;
+    }
+    
+    .chartArea > div {
+        height: 200px !important;
+    }
+    
+    .cardContent {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    /* Ensure mini stats stay side-by-side at 398px */
+    .miniStatsColumn {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .miniStatCard {
+        padding: 10px;
+    }
+    
+    .miniStatValue {
+        font-size: 18px;
+    }
+    
+    .miniStatLabel {
+        font-size: 12px;
+    }
+    
+    .sumHugeNumber {
+        font-size: 38px;
+    }
+    
+    .sideCard {
+        padding: 12px;
+    }
+    
+    .sideCardValue {
+        font-size: 40px;
+    }
+}

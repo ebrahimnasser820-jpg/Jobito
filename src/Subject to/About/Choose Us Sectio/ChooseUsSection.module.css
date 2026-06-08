@@ -1,0 +1,109 @@
+.whyUsSection {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #667eea0a 0%, #764ba20a 100%);
+}
+
+.headerTop {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subtitle {
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #26a4ff20, #7c3aed20);
+  color: #26a4ff;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #1f2937;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.featureCard {
+  position: relative;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  overflow: hidden;
+  opacity: 0;
+  cursor: pointer;
+  transform: translateY(30px);
+}
+
+.featureCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.featureIconWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover .featureIconWrapper {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.featureIconContainer svg {
+  width: 30px;
+  height: 30px;
+}
+
+.featureContent h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.featureContent p {
+  color: #6b7280;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.featureHoverEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #26a4ff, #7c3aed);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.featureCard:hover .featureHoverEffect {
+  opacity: 1;
+}
+
+.featureCard:hover .featureContent p {
+  color: white;
+}
+
+.featureCard:hover .featureContent h3 {
+  color: white;
+}

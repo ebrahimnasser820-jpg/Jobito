@@ -1,0 +1,556 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(32, 36, 48, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  background: var(--color-card-bg);
+  width: 100%;
+  max-width: 530px;
+  border-radius: 12px;
+  padding: 32px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.modalContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: rgba(91, 141, 239, 0.3);
+  border-radius: 10px;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 141, 239, 0.6);
+}
+
+.errorBoundaryOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.errorBoundaryContent {
+  background: var(--color-card-bg);
+  border-radius: 12px;
+  padding: 32px;
+  maxwidth: 400px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.errorTitle {
+  color: #dc3545;
+  margin-bottom: 12px;
+}
+
+.errorDescription {
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+}
+
+.errorCloseButton {
+  padding: 10px 24px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  fontsize: 14px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.closeButton:hover {
+  opacity: 0.7;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  margin-top: 16px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.companyLogo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerTitles h2 {
+  font-family: "Epilogue", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+}
+
+.headerTitles p {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.dot {
+  margin: 0 8px;
+  color: var(--color-text-secondary);
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 24px 0;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionHeader h3 {
+  font-family: "Epilogue", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 12px 0;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #8c9ea8;
+  margin: 0;
+}
+
+.applyForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.formGroup input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  font-size: 14px;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-bg-secondary);
+}
+
+.formGroup input[type="text"]::placeholder {
+  color: #a0aabf;
+}
+
+.formGroup input[type="text"]:focus {
+  border-color: #5b8def;
+}
+
+.textareaWrapper {
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s;
+  background-color: var(--color-bg-secondary);
+}
+
+.textareaWrapper:focus-within {
+  border-color: #5b8def;
+}
+
+.textareaWrapper textarea {
+  width: 100%;
+  height: 120px;
+  padding: 16px;
+  border: none;
+  resize: none;
+  font-size: 14px;
+  color: var(--color-text);
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+}
+
+.textareaWrapper textarea::placeholder {
+  color: #a0aabf;
+}
+
+.formattingToolbar {
+  border-top: 1px solid var(--color-border);
+  padding: 12px 20px;
+  background-color: var(--color-bg-secondary);
+}
+
+.toolbarIcons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: #7c8493;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.iconBtn:hover {
+  color: var(--color-text);
+}
+
+.textareaFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 13px;
+  color: #a0aabf;
+}
+
+.formGroupResume {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resumeTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.resumeLabel {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.uploadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border: 1.5px dashed var(--color-primary);
+  border-radius: 999px;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--color-card-bg);
+  transition: all 0.25s ease;
+  min-width: 140px;
+}
+
+.uploadButton:hover {
+  background: rgba(91, 141, 239, 0.08);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.resumeHelpBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(91, 141, 239, 0.06);
+  border: 1px solid rgba(91, 141, 239, 0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.uploadHelpText {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.optionalText {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: normal;
+}
+
+.fileValidationError {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 4px;
+  padding: 8px 14px;
+  background: rgba(220, 53, 69, 0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(220, 53, 69, 0.15);
+}
+
+.submitSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 14px;
+  background-color: #5b8def;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Epilogue", sans-serif;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #4a7acc;
+}
+
+.termsText {
+  font-size: 14px;
+  color: #7c8493;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.termsText a {
+  color: #5b8def;
+  text-decoration: none;
+}
+
+.termsText a:hover {
+  text-decoration: underline;
+}
+
+.closedOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-card-bg);
+  opacity: 0.95;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.closedMessage {
+  text-align: center;
+  padding: 40px;
+  max-width: 400px;
+}
+
+.closedMessage h2 {
+  font-family: "Epilogue", sans-serif;
+  color: var(--color-text);
+  font-size: 24px;
+  margin: 20px 0 12px;
+}
+
+.statusBox {
+  background: var(--color-bg-secondary);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid var(--color-border);
+}
+
+.statusLabel {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.statusValue {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.formErrorBox {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  color: #dc3545;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.05);
+}
+
+/* Tradesman Special UI */
+.roundedTextarea {
+  width: 100%;
+  height: 160px;
+  padding: 24px 30px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 60px; /* High radius as per image */
+  color: var(--color-text);
+  font-size: 15px;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  margin-top: 8px;
+}
+
+.pillSubmitButton {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(90deg, #5b8def 0%, #4a7acc 100%);
+  color: #1a2a47; /* Dark text on button as per image */
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: opacity 0.2s;
+  box-shadow: 0 4px 15px rgba(91, 141, 139, 0.2);
+}
+
+.pillSubmitButton:hover {
+  opacity: 0.9;
+}
+
+.pillSubmitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    padding: 12px;
+  }
+
+  .modalContent {
+    padding: 20px 16px;
+    border-radius: 16px;
+    max-height: 92vh;
+  }
+
+  .headerTitles h2 {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .headerTitles p {
+    font-size: 13px;
+  }
+
+  .companyLogo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .divider {
+    margin: 16px 0;
+  }
+
+  .formGroup label {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .uploadButton {
+    min-width: 110px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .resumeLabel {
+    font-size: 14px;
+  }
+
+  .submitButton {
+    padding: 12px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,127 @@
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  color: #374151;
+  cursor: pointer;
+  padding: 4px;
+  margin-right: 12px;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end; /* Push items left in RTL / right in LTR */
+  flex: 1;
+  gap: 15px;
+  margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+.navItem {
+  display: flex;
+  align-items: stretch;
+}
+
+.sep {
+  display: block;
+  width: 1px;
+  background: #d1d5e8;
+  transform: skewX(-18deg);
+  transform-origin: bottom;
+  height: 70%;
+  align-self: center;
+  margin: 0 2px;
+  flex-shrink: 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+}
+
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover .navIcon,
+.linkActive .navIcon {
+  opacity: 1;
+}
+
+.link:hover {
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.08);
+}
+
+.linkActive {
+  color: var(--color-primary);
+  font-weight: 600;
+  background: rgba(var(--color-primary-rgb), 0.12);
+}
+
+
+.navLabel {
+  position: relative;
+}
+
+/* Mobile nav */
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card-bg);
+  border-top: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  font-family: 'Sora', sans-serif;
+  position: absolute;
+  top: 62px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  transition: all 0.15s ease;
+}
+
+.mobileLink:hover,
+.mobileLinkActive {
+  background: var(--color-bg-secondary);
+  color: var(--color-primary);
+}
+

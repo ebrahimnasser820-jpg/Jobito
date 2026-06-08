@@ -1,0 +1,449 @@
+.applicant-page {
+  padding: 40px 60px;
+  background-color: var(--color-bg, #0B1020);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text, #E2E8F0);
+}
+
+.top-p-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color-border, #1E2A45);
+  padding-bottom: 24px;
+}
+
+.top-p-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.top-p-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-box input {
+  padding: 10px 16px 10px 40px;
+  border: 1px solid var(--color-border, #1E2A45);
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  width: 320px;
+  color: var(--color-text);
+  background-color: transparent;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: var(--color-primary);
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--color-border, #1E2A45);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ─── Filter Chips ─── */
+.filterCheckboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.filterChip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid var(--color-border, #1E2A45);
+  color: var(--color-text-secondary, #94A3B8);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filterChip input[type="checkbox"] {
+  display: none;
+}
+
+.filterChip::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--color-border, #1E2A45);
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.filterChipActive::before {
+  background-color: var(--color-primary, #6B8CE0);
+  border-color: var(--color-primary, #6B8CE0);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ─── Table View ─── */
+.tableContainer {
+  background: transparent;
+  margin-top: 20px;
+  overflow-x: auto; /* Allow horizontal scrolling if table is too wide */
+}
+
+.applicantTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.applicantTable th {
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted, #64748b);
+  border-bottom: 1px solid var(--color-border, #1E2A45);
+  white-space: nowrap;
+}
+
+.applicantTable td {
+  padding: 20px;
+  border-bottom: 1px solid var(--color-border, #1E2A45);
+  font-size: 15px;
+  vertical-align: middle;
+  color: var(--color-text-secondary);
+  white-space: nowrap; /* Prevent names and emails from wrapping into multiple lines */
+}
+
+.appUser {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  /* Removed min-width to allow the table to fit the screen without scrolling */
+}
+
+.appUser span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px; /* Truncate long names with ... */
+  display: block;
+}
+
+.appUser img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.appRole {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Truncate long emails with ... */
+}
+
+/* ─── Status Badges (Outline Style) ─── */
+.appBadge {
+  display: inline-flex;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid;
+  background: transparent;
+}
+
+.badge-shortlisted { color: #6B8CE0; border-color: rgba(107, 140, 224, 0.4); }
+.badge-interview { color: #818cf8; border-color: rgba(129, 140, 248, 0.4); }
+.badge-waitlisted { color: #ffb836; border-color: rgba(255, 184, 54, 0.4); }
+.badge-declined { color: #ff6550; border-color: rgba(255, 101, 80, 0.4); }
+.badge-hired { color: #56cdad; border-color: rgba(86, 205, 173, 0.4); }
+.badge-inreview { color: #94A3B8; border-color: rgba(148, 163, 184, 0.4); }
+
+/* ─── Actions ─── */
+.appActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.seeAppBtn, .deleteAppBtn {
+  background: var(--color-text, #E2E8F0);
+  color: var(--color-bg, #0B1020);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent stacking */
+}
+
+.deleteAppBtn {
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+}
+
+.seeAppBtn:hover, .deleteAppBtn:hover {
+  opacity: 0.8;
+}
+
+/* ─── Pagination Footer ─── */
+.paginationFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+}
+
+.pageSizeWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text-secondary);
+}
+
+.pageSelectBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border, #1E2A45);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pageControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageNav {
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  background: transparent;
+  border: none;
+}
+
+.pageNav:hover { color: var(--color-text); }
+
+.pageNum {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+}
+
+.pageNum.active {
+  background: var(--color-primary, #6B8CE0);
+  color: white;
+}
+
+/* Embedded State override */
+.applicant-page.isEmbedded {
+  padding: 0;
+  background-color: transparent;
+  min-height: auto;
+}
+
+.applicant-page.isEmbedded .top-p-header {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 24px;
+}
+
+/* Optimize table padding for better spacing */
+.applicantTable th {
+  padding: 16px 12px;
+}
+
+.applicantTable td {
+  padding: 16px 12px;
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+  .applicant-page {
+    padding: 20px 16px;
+  }
+
+  .top-p-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+  }
+
+  .top-p-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .filterCheckboxes {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .filterChip {
+    flex: 1;
+    min-width: calc(50% - 10px);
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  /* Table to Cards Transformation */
+  .tableContainer {
+    margin-top: 12px;
+    overflow-x: visible;
+  }
+
+  .applicantTable, 
+  .applicantTable tbody, 
+  .applicantTable tr, 
+  .applicantTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .applicantTable thead {
+    display: none;
+  }
+
+  .applicantTable tr {
+    background: var(--color-bg-secondary, #13192B);
+    border: 1px solid var(--color-border, #1E2A45);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .applicantTable td {
+    border-bottom: none;
+    padding: 8px 0;
+    white-space: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    text-align: right;
+  }
+
+  /* Hide Checkbox Column on Mobile */
+  .applicantTable td:first-child {
+    display: none;
+  }
+
+  /* User profile cell styled as card header */
+  .applicantTable tr td:nth-child(2) {
+    border-bottom: 1px solid var(--color-border, #1E2A45);
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    text-align: right;
+  }
+
+  .appUser {
+    gap: 12px;
+  }
+
+  .appUser img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .appUser span {
+    font-size: 16px;
+    max-width: none;
+  }
+
+  /* Labels generated dynamically from HTML attributes */
+  .applicantTable td[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: var(--color-text-muted, #64748b);
+    margin-left: 8px;
+  }
+
+  :global([dir="ltr"]) .applicantTable td[data-label]::before {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+
+  .appActions {
+    justify-content: flex-end;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .seeAppBtn {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 16px;
+  }
+
+  .paginationFooter {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    padding-top: 20px;
+  }
+}
+
+/* RTL */
+[dir="rtl"] .applicant-table { text-align: right; }
+[dir="rtl"] .delete-app-btn { margin-left: 0; margin-right: 8px; }

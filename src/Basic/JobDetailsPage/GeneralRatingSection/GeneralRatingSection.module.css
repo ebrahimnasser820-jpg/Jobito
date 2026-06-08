@@ -1,0 +1,270 @@
+.container {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.avgBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 176, 32, 0.1);
+  padding: 6px 12px;
+  borderRadius: 20px;
+  border: 1px solid rgba(255, 176, 32, 0.3);
+}
+
+.avgValue {
+  color: #FFB020;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.count {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.divider {
+  height: 4px;
+  width: 60px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.card {
+  background: var(--color-bg-card, #fff);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-border, #eee);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.cardSubtitle {
+  margin: 0 0 1.5rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.starsContainer {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.star {
+  cursor: pointer;
+  color: #E0E0E0;
+  transition: all 0.2s ease;
+}
+
+.starFilled {
+  color: #FFD700;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border, #eee);
+  background: var(--color-bg-input, #f9f9f9);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  margin-bottom: 1.5rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.submitBtn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.alreadyRatedBox {
+  background: rgba(16, 185, 129, 0.05);
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkCircle {
+  background: #10b981;
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alreadyRatedText {
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+
+.loginPrompt {
+  background: var(--color-bg-card, #fff);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-border, #eee);
+  text-align: center;
+}
+
+.loginPrompt p {
+  margin: 0 0 1.5rem 0;
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+.loginBtn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.loginBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Reviews List Styles */
+.reviewsList {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.noReviews {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  border: 1px dashed var(--color-border);
+}
+
+.reviewCard {
+  background: var(--color-bg-card);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s;
+}
+
+.reviewCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reviewAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-bg);
+}
+
+.reviewInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reviewerName {
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
+
+.reviewMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewStars {
+  display: flex;
+  gap: 2px;
+}
+
+.reviewDate {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.reviewComment {
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+  white-space: pre-wrap;
+}

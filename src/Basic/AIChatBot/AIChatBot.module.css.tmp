@@ -1,0 +1,34 @@
+/* ─── Floating Controls ─── */
+.floatingControls {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 99999;
+  pointer-events: all;
+}
+
+.floatBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.floatBtn:hover {
+  background: var(--color-primary) !important;
+  color: white;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 45px rgba(var(--color-primary-rgb), 0.5);
+}

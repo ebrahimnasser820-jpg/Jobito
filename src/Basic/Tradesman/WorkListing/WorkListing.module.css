@@ -1,0 +1,247 @@
+.container {
+  padding: 40px;
+  min-height: 100vh;
+  font-family: "Syne", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.container.dark {
+  background-color: #000c18;
+  color: #f8fafc;
+}
+
+.container.light {
+  background-color: transparent;
+  color: #1e293b;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.header p {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 50px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px 20px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+:global([dir="rtl"]) .table th,
+:global(.rtl) .table th {
+  text-align: right;
+}
+
+.table tr td {
+  padding: 20px;
+  transition: background 0.2s;
+}
+
+.dark .table tr td {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light .table tr td {
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.table tr td:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+.dark .table tr td:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light .table tr td:first-child {
+  border-left: 1px solid #e2e8f0;
+}
+
+.table tr td:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.dark .table tr td:last-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light .table tr td:last-child {
+  border-right: 1px solid #e2e8f0;
+}
+
+/* ── RTL: Flip border-radius and borders ── */
+:global([dir="rtl"]) .table tr td:first-child {
+  border-radius: 0 12px 12px 0;
+  border-left: none;
+}
+:global([dir="rtl"]) .dark .table tr td:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: none;
+}
+:global([dir="rtl"]) .light .table tr td:first-child {
+  border-right: 1px solid #e2e8f0;
+  border-left: none;
+}
+
+:global([dir="rtl"]) .table tr td:last-child {
+  border-radius: 12px 0 0 12px;
+  border-right: none;
+}
+:global([dir="rtl"]) .dark .table tr td:last-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: none;
+}
+:global([dir="rtl"]) .light .table tr td:last-child {
+  border-left: 1px solid #e2e8f0;
+  border-right: none;
+}
+
+/* ── RTL: Header alignment ── */
+:global([dir="rtl"]) .header {
+  text-align: right;
+}
+
+:global([dir="rtl"]) .table tr td {
+  text-align: right;
+}
+
+.jobTitle {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.rate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fbbf24;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.statusClosed {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.date {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.applicants {
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.actionBtn {
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .actionBtn {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.light .actionBtn {
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+}
+
+.actionBtn:hover {
+  background: #7c3aed;
+  color: white;
+  border-color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.pageBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.dark .pageBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.light .pageBtn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+}
+
+.pageBtnActive {
+  background: #7c3aed !important;
+  border-color: #7c3aed !important;
+  color: white !important;
+}
+
+.pageBtn:hover:not(.pageBtnActive) {
+  border-color: #7c3aed;
+  color: #7c3aed;
+}

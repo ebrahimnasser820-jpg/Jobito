@@ -1,0 +1,148 @@
+:root {
+  --color-primary: #030412;
+  --color-midnight: #06091f;
+  --color-navy: #161a31;
+  --color-indigo: #1f1e39;
+  --color-storm: #282b4b;
+  --color-aqua: #33c2cc;
+  --color-mint: #57db96;
+  --color-royal: #5c33cc;
+  --color-lavender: #7a57db;
+  --color-fuchsia: #ca2f8c;
+  --color-orange: #cc6033;
+  --color-sand: #d6995c;
+  --color-coral: #ea4884;
+
+  --marquee-duration: 40s;
+  --card-width: 320px;
+}
+
+.testimonial {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.testimonial h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem); 
+  font-weight: 800;
+  color: var(--color-midnight);
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.marquee {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: marquee var(--marquee-duration) linear infinite;
+}
+
+.marquee .reverse {
+  animation-direction: reverse;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+.reviewCard {
+  width: var(--card-width);
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    145deg,
+    var(--color-indigo),
+    var(--color-midnight)
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reviewCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--color-lavender);
+  background: linear-gradient(145deg, var(--color-storm), var(--color-navy));
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reviewCard img {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border: 2px solid var(--color-royal);
+}
+
+.reviewCard figcaption {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.reviewCard p {
+  color: var(--color-mint); 
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.reviewCard blockquote {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.testimonial::before,
+.testimonial::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.testimonial::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.testimonial::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
